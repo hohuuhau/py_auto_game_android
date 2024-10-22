@@ -89,22 +89,19 @@ khieuchien = cv2.imread('src/khieuchien.png')
 win = cv2.imread('src/win.png')
 lose = cv2.imread('src/lose.png')
 
+total = 0
+c_win = 0
+c_lose = 0
 while True:
     try:
         
         d.screenshot("src/screen.png") # take screenshot
         screen = cv2.imread('src/screen.png')
-        res = click_on_best_match(screen, boqua, 0.8)
-        
-        if res is not None:
-            print("Found bo qua")
-            d.click(res[0], res[1])
-            time.sleep(1)
-            continue
         
         res = click_on_best_match(screen, khieuchien, 0.8)
         if res is not None:
             print("Found khieu chien")
+            total += 1
             d.click(res[0], res[1])
             time.sleep(1)
             continue
@@ -112,6 +109,7 @@ while True:
         res = getPositionByAdded(screen, win, 0.8)
         if res is not None:
             print("Found win")
+            c_win += 1
             d.click(res[0], res[1])
             time.sleep(1)
             continue
@@ -119,14 +117,26 @@ while True:
         res = getPositionByAdded(screen, lose, 0.8)
         if res is not None:
             print("Found lose")
+            c_lose += 1
             d.click(res[0], res[1])
             time.sleep(1)
             continue
+        
+        res = click_on_best_match(screen, boqua, 0.8)
+        if res is not None:
+            print("Found bo qua")
+            d.click(res[0], res[1])
+            time.sleep(1)
+            continue
+        
         
         time.sleep(1)
         # print("Not found")
     except KeyboardInterrupt:
         print("Exit")
+        print("Total: ", total)
+        print("Win: ", c_win)
+        print("Lose: ", c_lose)
         break
     except Exception as e:
         print(e)
