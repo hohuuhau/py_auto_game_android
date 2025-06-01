@@ -1,0 +1,18 @@
+2025-06-01 13:22:22,335 - INFO - Log file: logs/auto_20250601_132222.log
+2025-06-01 13:22:23,660 - INFO - Connecting to device: emulator-5554
+2025-06-01 13:22:24,215 - INFO - Press Ctrl+C to stop and view statistics
+2025-06-01 13:22:24,216 - INFO - Press 'd' to toggle debug mode
+2025-06-01 13:22:25,057 - INFO - Found challenge
+2025-06-01 13:22:26,979 - INFO - Found challenge
+2025-06-01 13:22:28,524 - INFO - Stopping...
+2025-06-01 13:22:28,524 - INFO - 
+==================================================
+FINAL STATISTICS
+==================================================
+Total matches: 2
+Wins: 0
+Losses: 0
+Win rate: 0.0%
+==================================================
+2025-06-01 13:22:28,525 - INFO - Statistics saved to stats_20250601_132228.txt
+2025-06-01 13:22:28,526 - ERROR - Error during cleanup: [WinError 32] The process cannot access the file because it is being used by another process: 'src/screen.png'
